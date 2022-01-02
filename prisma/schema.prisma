@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Deliveryman {
-  id       String @id @default(cuid())
+  id       String @id @default(uuid())
   username String
   password String
 
@@ -17,7 +17,7 @@ model Deliveryman {
 }
 
 model Clients {
-  id       String @id @default(cuid())
+  id       String @id @default(uuid())
   username String
   password String
 
@@ -26,7 +26,7 @@ model Clients {
 }
 
 model Deliveries {
-  id             String       @id @default(cuid())
+  id             String       @id @default(uuid())
   id_client      String
   client         Clients      @relation(fields: [id_client], references: [id])
   id_deliveryman String?
